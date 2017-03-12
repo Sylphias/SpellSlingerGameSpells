@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{B1BEA9C1-B26B-AB6A-6D98-B142E803BC01}") = "ProjectilesSpellSlinger", "Assembly-CSharp.csproj", "{B34FA23E-38FC-45C3-2F6E-CF23C9D40C21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B34FA23E-38FC-45C3-2F6E-CF23C9D40C21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B34FA23E-38FC-45C3-2F6E-CF23C9D40C21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B34FA23E-38FC-45C3-2F6E-CF23C9D40C21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B34FA23E-38FC-45C3-2F6E-CF23C9D40C21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
