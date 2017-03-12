@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Spells;
 
 public class PlayerScript : MonoBehaviour {
 
@@ -13,6 +14,7 @@ public class PlayerScript : MonoBehaviour {
 	private float fireBallCooldownTimer,earthWallCooldownTimer,iceballCooldownTimer;
 	// Use this for initialization
 	void Start () {
+		gameObject.tag = "Player";
 		fireBallCooldownTimer = Time.time;
 		earthWallCooldownTimer = Time.time;
 		iceballCooldownTimer = Time.time;
@@ -27,9 +29,10 @@ public class PlayerScript : MonoBehaviour {
 		transform.Rotate(0, h, 0);
 		transform.Translate(0, 0, v);
 		if(Input.GetKey(KeyCode.Space)){
-			if(Time.time > fireBallCooldownTimer){
-				Instantiate(
-					fireBall, gun.position, gun.rotation);
+ 			if(Time.time > fireBallCooldownTimer){
+				// Fireball fb = new Fireball (5,5,10,10,3,0,true,gun.position,gun.rotation);
+				Instantiate(fireBall, gun.position, gun.rotation);
+//				fb.initialize (5.0f, 5.0f, 20.0f, 10.0f, 3.0f);		
 				fireBallCooldownTimer = Time.time + shootRate;
 			}
 		}

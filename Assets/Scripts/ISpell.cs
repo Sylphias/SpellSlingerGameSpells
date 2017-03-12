@@ -11,7 +11,7 @@ public interface ISpell
 		set;
 	}
 
-	bool isCooldown();
+	bool isOnCooldown();
 
 }
 

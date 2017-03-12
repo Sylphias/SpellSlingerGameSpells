@@ -1,12 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-public class ProjectileSpell: MonoBehaviour,ISpell
-{
-
-	public ProjectileSpell ()
-	{
-
-	}
+public class ProjectileSpell: MonoBehaviour{
+	private bool isCooldown;
 
 	public float duration{
 		get{return duration;}
@@ -23,14 +18,28 @@ public class ProjectileSpell: MonoBehaviour,ISpell
 		set{ this.isDamage = value; }
 	}
 
-	public bool damage{
+	public float damage{
 		get{return damage;}
 		set{ this.damage = value; }
 	}
 
-	public bool explosiveForce{
-		get{ return explosiveForce; }
-		set{ this.explosiveForce = value; }
+	public float radius{
+		get{ return radius; }
+		set{ this.radius = value; }
+	}
+
+	public float explosionForce{
+		get{ return explosionForce; }
+		set{ this.explosionForce = value; }
+	}
+
+	public float projectileSpeed{
+		get{ return projectileSpeed; }
+		set{ this.projectileSpeed = value; }
+	}
+//	Checks if spells is on cooldown
+	public bool isOnCooldown(){
+		return true;
 	}
 		
 }

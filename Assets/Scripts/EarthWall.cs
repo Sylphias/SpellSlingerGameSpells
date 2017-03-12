@@ -22,12 +22,7 @@ public class EarthWall : MonoBehaviour {
 		}
 	
 	}
-
-	void OnParticleCollision(GameObject other){
-		Rigidbody body = other.GetComponent<Rigidbody> ();
-		Debug.Log ("Hit Hit");
-	}
+		
 	void Update () {
-	
 	}
 }

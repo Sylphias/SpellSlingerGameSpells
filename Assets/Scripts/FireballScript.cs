@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-
 public class FireballScript : MonoBehaviour {
 	public float expiryTime = 0f;
 	// Use this for initialization
@@ -15,7 +14,6 @@ public class FireballScript : MonoBehaviour {
 
 	private ContactPoint point;
 	void Start () {
-//		_spawnedObj =  Instantiate(animationObject) as GameObject;
 		Destroy (gameObject, expiryTime);
 	}
 		
@@ -34,6 +32,7 @@ public class FireballScript : MonoBehaviour {
 			explosionPoint = gameObject.transform.position;
 		}
 			
+
 		Collider[] colliders = Physics.OverlapSphere (explosionPoint, explosionRadius);
 		foreach (Collider c in colliders) {
 			if (c.GetComponent<Rigidbody>() == null) {
