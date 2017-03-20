@@ -11,6 +11,11 @@ public class healthbar : MonoBehaviour {
 	public float maxHealth;
 	private float currHealth;
 
+	public float CurrentHealth {
+		get{ return currHealth; }
+		set{ currHealth = value; }
+	}
+
 	void Start () {
 		currHealth = maxHealth;
 	}
@@ -26,6 +31,7 @@ public class healthbar : MonoBehaviour {
 	}
 
 	public void TakeDamage(float damage){
+		Debug.Log ("damaged");
 		currHealth -= damage;
 		if (currHealth < 0) {
 			currHealth = 0;
