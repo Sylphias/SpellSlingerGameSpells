@@ -41,7 +41,7 @@ public class PlayerScript : MonoBehaviour {
 				GameObject fireballPrefab = AssetDatabase.LoadAssetAtPath ("Assets/MagicArsenal/MagicProjectiles/Prefabs/Fire/FireProjectileNormal.prefab", typeof(GameObject))as GameObject;
 				GameObject go = (GameObject)Instantiate (fireballPrefab, gun.position, gun.rotation);
 				Fireball fb = go.GetComponent<Fireball>();
-				fb.initialize (5,5.0f, 5.0f, 20.0f, 10.0f, 7.0f);		
+				fb.initialize (5,5.0f, 5.0f, 20.0f, 10.0f, 10.0f);		
 				spell1CD = Time.time + 1;
 			}
 		}
@@ -77,6 +77,16 @@ public class PlayerScript : MonoBehaviour {
 				GameObject go = (GameObject)Instantiate (swiftnessPrefab,transform.position,transform.rotation);
 				Swiftness sft = go.GetComponent<Swiftness>();
 				sft.initialize (2,5,gameObject,2);		
+				spell3CD = Time.time + sft.Cooldown;
+			}
+		}
+
+		if(Input.GetKey(KeyCode.Alpha2)){
+			if (Time.time > spell3CD) {
+				GameObject frostNovaPrefab = AssetDatabase.LoadAssetAtPath ("Assets/MagicArsenal/MagicSphereBlast/Prefabs/FrostSphereBlast.prefab", typeof(GameObject))as GameObject;
+				GameObject go = (GameObject)Instantiate (frostNovaPrefab,transform.position,transform.rotation);
+				FrostNova sft = go.GetComponent<FrostNova>();
+				sft.initialize (2,10,10,0);		
 				spell3CD = Time.time + sft.Cooldown;
 			}
 		}
@@ -141,7 +151,7 @@ public class PlayerScript : MonoBehaviour {
 
 
 	public void Chilled(float speedMultiplier){
-		FrostDebuff fd = new FrostDebuff(5,0,speedMultiplier,moveForce);
+		FrostDebuff fd = new FrostDebuff(5,0,speedMultiplier,moveForce,rotationalForce);
 		if (buffList.Count == 0) {
 			buffList.Add (fd);
 			return;

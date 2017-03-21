@@ -15,14 +15,16 @@ public class EarthWall : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void OnCollisionEnter(Collider collide ){
-		counter++;
+
+	void Update () {
+	}
+
+	void OnTriggerEnter(Collider col){
+		if (col.tag != "player") {
+			counter++;
+		}
 		if (counter == 5) {
 			Destroy(gameObject);
 		}
-	
-	}
-		
-	void Update () {
 	}
 }

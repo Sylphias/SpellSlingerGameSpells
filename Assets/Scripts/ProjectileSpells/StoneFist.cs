@@ -33,6 +33,8 @@ namespace Spells
 			impactPrefab = AssetDatabase.LoadAssetAtPath ("Assets/MagicArsenal/MagicProjectiles/Prefabs/Earth/EarthImpactMega.prefab", typeof(GameObject))as GameObject;
 			Destroy (gameObject,Duration);
 		}
+
+
 		void OnCollisionEnter(Collision col){
 			Debug.Log (col.collider.tag);
 			if(col.collider.tag =="Player"){

@@ -66,8 +66,6 @@ namespace Spells
 		public void Apply(Component victim){
 			if (victim as PlayerScript) {
 				PlayerScript ps = (PlayerScript)victim;
-				Debug.Log (oldRotationValue);
-				Debug.Log (speedMultiplier);
 				ps.moveForce = oldSpeedValue*speedMultiplier;
 				ps.rotationalForce = oldRotationValue*speedMultiplier;
 			}
