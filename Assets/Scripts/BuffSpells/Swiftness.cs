@@ -20,7 +20,7 @@ namespace Spells{
 		// Use this for initialization
 		void Start () {
 			gameObject.transform.Rotate (-90, 0, 0);
-			GameObject swiftnessEnchantPrefab = AssetDatabase.LoadAssetAtPath ("Assets/MagicArsenal/MagicEnchant/Prefabs/StormEnchant.prefab", typeof(GameObject))as GameObject;	
+			GameObject swiftnessEnchantPrefab = Resources.Load ("Assets/MagicArsenal/MagicEnchant/Prefabs/StormEnchant.prefab", typeof(GameObject))as GameObject;	
 			GameObject go = Instantiate (swiftnessEnchantPrefab,gameObject.transform.position,gameObject.transform.rotation) as GameObject;
 			if (!go.GetComponent<ParticleSystem> ().IsAlive ()) {
 				Destroy (go);

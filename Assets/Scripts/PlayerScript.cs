@@ -73,7 +73,7 @@ public class PlayerScript : MonoBehaviour {
 
 		if(Input.GetKey(KeyCode.Alpha1)){
 			if (Time.time > spell3CD) {
-				GameObject swiftnessPrefab = AssetDatabase.LoadAssetAtPath ("Assets/MagicArsenal/MagicAuras/Prefabs/SpinningAura/SpinningStorm.prefab", typeof(GameObject))as GameObject;
+				GameObject swiftnessPrefab = Resources.Load ("SpinningStorm", typeof(GameObject))as GameObject;
 				GameObject go = (GameObject)Instantiate (swiftnessPrefab,transform.position,transform.rotation);
 				Swiftness sft = go.GetComponent<Swiftness>();
 				sft.initialize (2,5,gameObject,2);		
